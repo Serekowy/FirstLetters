@@ -20,18 +20,21 @@ public class FirstLetter {
 
     public static List<String> changeFirstLetter(List<String> words) {
         List<String> changedLetters = new ArrayList<>();
+        char letter;
         for (String item : words) {
             if(Character.isLowerCase(item.charAt(0))) {
-                char upLetter = Character.toUpperCase(item.charAt(0));
-                String spanLetter = upLetter + item.substring(1);
-                changedLetters.add(spanLetter);
+                letter = Character.toUpperCase(item.charAt(0));
             } else {
-                char downLetter = Character.toLowerCase(item.charAt(0));
-                String spanLetter = downLetter + item.substring(1);
-                changedLetters.add(spanLetter);
+                letter = Character.toLowerCase(item.charAt(0));
             }
+            changedLetters.add(spanLetter(letter, item.substring(1)));
         }
 
         return changedLetters;
+    }
+
+    public static String spanLetter(char letter, String restWord)
+    {
+        return letter + restWord;
     }
 }
