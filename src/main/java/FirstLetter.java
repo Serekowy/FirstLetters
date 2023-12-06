@@ -27,14 +27,9 @@ public class FirstLetter {
             } else {
                 letter = Character.toLowerCase(item.charAt(0));
             }
-            changedLetters.add(spanLetter(letter, item.substring(1)));
+            changedLetters.add(letter + item.substring(1));
         }
 
         return changedLetters;
-    }
-
-    public static String spanLetter(char letter, String restWord)
-    {
-        return letter + restWord;
     }
 }
